@@ -20,6 +20,8 @@ public class LoginPage {
 	
 	private By registerLink = By.linkText("Register");
 	
+	private By testing = By.linkText("for testing purpose i created this locator");
+	
 	//page const..
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
