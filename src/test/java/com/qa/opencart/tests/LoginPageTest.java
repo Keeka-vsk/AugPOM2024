@@ -38,8 +38,10 @@ public class LoginPageTest extends BaseTest{
 		Assert.assertTrue(accpage.isLogoutLinkExist());
 		
 		
+//		accpage = loginpage.doLogin("keerthuint@gmail.com", "Vsk@9194");
+//		Assert.assertTrue(accpage.isLogoutLinkExist());
 		
-//		Assert.assertTrue(loginpage.doLogin("keerthuint@gmail.com", "Vsk2803"));
+//		Assert.assertTrue(loginpage.doLogin("keerthuint@gmail.com", "Vsk@9194"));
 	}
 	
 }
