@@ -19,6 +19,11 @@ import com.qa.opencart.pages.SearchResultPage;
 public class BaseTest {
 	
 	protected WebDriver driver;
+	/*
+	 * You are restricting the access to all and only within the package and only child members 
+	 * can access it. Obviously you are using inheritance concept here so all the Test classes
+	 * should access base it hence protected is the access modifier that should be used here.
+	 */
 	protected Properties prop;
 	DriverFactory df;
 	protected LoginPage loginpage;
@@ -45,6 +50,13 @@ public class BaseTest {
 		
 		
 		softassert = new SoftAssert();
+		
+//		df = new DriverFactory();
+//		prop = df.initProp();
+//		driver = df.initDriver(prop);//using call by reference 
+		
+//		driver = df.initDriver("chrome");
+//		loginpage = new LoginPage(driver);
 		
 	}
 	

@@ -24,7 +24,7 @@ public class DriverFactory {
 	//we implement threadlocal concept to get new and individual driver each time while we use threads 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>(); 
 	
-	public WebDriver initDriver(Properties prop) {
+	public WebDriver initDriver(Properties prop /*String browserName*/) { // instead of browserName you can call the Properties reference 
 		
 		String browserName = prop.getProperty("browser");
 //		String browserName = System.getProperty("browser");
@@ -34,10 +34,14 @@ public class DriverFactory {
 		
 		switch (browserName.toLowerCase().trim()) {
 		case "chrome":
+//			driver = new ChromeDriver();
+//			break;
 //			driver = new ChromeDriver(optionsmanager.getChromeOptions());
 			tlDriver.set(new ChromeDriver(optionsmanager.getChromeOptions()));
 			break;
 		case "firefox":
+//			driver = new FirefoxDriver();
+//			break;
 //			driver = new FirefoxDriver(optionsmanager.getFirefoxOptions());
 			tlDriver.set(new FirefoxDriver(optionsmanager.getFirefoxOptions()));
 			break;
@@ -52,7 +56,7 @@ public class DriverFactory {
 		
 //		driver.manage().deleteAllCookies();
 //		driver.manage().window().maximize();
-//		driver.get(prop.getProperty("url"));
+//		driver.get(prop.getProperty("url"));//Using properties reference you can remove the hardcoded url value
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
@@ -119,9 +123,10 @@ public class DriverFactory {
 		
 //		//to establish a connection with the file 
 //		// here ./ (dot slash represent root)
+//		prop = new Properties();
 //		try {
 //			FileInputStream fip = new FileInputStream("./src/test/resources/config/config.properties");
-//			prop.load(fip);//used to establish connection and load the key and value
+//			prop.load(fip);//used to establish connection and load the key and value from config file to properties class object ref
 //		} catch (FileNotFoundException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

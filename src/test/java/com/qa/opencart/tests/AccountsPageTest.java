@@ -15,6 +15,8 @@ public class AccountsPageTest extends BaseTest {
 	@BeforeTest
 	public void accSetUp() {
 		accpage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		
+//		accpage = loginpage.doLogin("keerthuint@gmail.com", "Vsk@9194");
 //		accpage = new AccountsPage(driver);
 	}
 	
@@ -51,6 +53,7 @@ public class AccountsPageTest extends BaseTest {
 	public void acctPageHeadersTest() {
 		List<String> actPageHeaderList = accpage.getAccountHeaders();
 		System.out.println(actPageHeaderList);
+		
 		//Assignement:
 		/*
 		 * Sort the acctual list and 
