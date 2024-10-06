@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AppConstants {
 	
-	public static final String LOGIN_PAGE_TILE = "Account Login11";
+	public static final String LOGIN_PAGE_TILE = "Account Login";
 	public static final String ACCOUNT_PAGE_TITLE = "My Account";
 	public static final String LOGIN_PAGE_URL_FRACTION = "route=account/login";
 	public static final String ACCOUNT_PAGE_URL_FRACTION = "route=account/account";
